@@ -3,19 +3,17 @@ import slugify from "slugify";
 
 class Options extends React.Component {
   render() {
-    const { feature } = this.props;
-    const { item } = this.props;
-    const { doTheUpdate } = this.props;
-    console.log(doTheUpdate);
     return (
       <div key={this.props.key} className='feature__item'>
         <input
           type='radio'
-          id={this.props.key}
+          id={this.props.theKey}
           className='feature__option'
           name={slugify(this.props.feature)}
           checked={this.props.item.name === this.props.state}
-          onClick={(e) => doTheUpdate(feature, item)}
+          onChange={(e) =>
+            this.props.updateFeature(this.props.feature, this.props.item)
+          }
         />
         <label htmlFor={this.props.key} className='feature__label'>
           {this.props.item.name} (

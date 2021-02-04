@@ -13,10 +13,10 @@ class MainForm extends React.Component {
         const itemHash = slugify(JSON.stringify(item));
         return (
           <Options
-            key={itemHash}
+            theKey={itemHash}
             feature={feature}
             state={this.props.state.selected[feature].name}
-            doTheUpdate={this.props.handleUpdate}
+            updateFeature={this.props.updateFeature}
             item={item}
             money={this.props.money}
           />

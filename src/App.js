@@ -14,7 +14,7 @@ const USCurrencyFormat = new Intl.NumberFormat("en-US", {
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.updateFeature = this.updateFeature.bind(this);
+    /*this.updateFeature = this.updateFeature.bind(this);*/
     this.state = {
       selected: {
         Processor: {
@@ -38,6 +38,7 @@ class App extends React.Component {
   }
 
   updateFeature = (feature, newValue) => {
+    console.log("working");
     const selected = Object.assign({}, this.state.selected);
     selected[feature] = newValue;
     this.setState({
@@ -55,7 +56,7 @@ class App extends React.Component {
           <Form
             state={this.state}
             features={this.props.features}
-            handleUpdate={this.updateFeature}
+            updateFeature={this.updateFeature}
             money={USCurrencyFormat}
           />
           <section className='main__summary'>
