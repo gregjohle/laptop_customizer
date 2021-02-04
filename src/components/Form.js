@@ -10,7 +10,6 @@ class MainForm extends React.Component {
       const featureHash = feature + "-" + idx;
 
       const options = this.props.features[feature].map((item) => {
-        console.log(item);
         const itemHash = slugify(JSON.stringify(item));
         return (
           <Options

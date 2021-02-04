@@ -12,7 +12,7 @@ class MainSummary extends React.Component {
           <>
             <Summary
               feature={feature}
-              key={featureHash}
+              theKey={featureHash}
               money={this.props.money}
               selected={selectedOption}
             />

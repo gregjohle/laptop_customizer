@@ -6,7 +6,7 @@ class Options extends React.Component {
     const { feature } = this.props;
     const { item } = this.props;
     const { doTheUpdate } = this.props;
-
+    console.log(doTheUpdate);
     return (
       <div key={this.props.key} className='feature__item'>
         <input
@@ -15,7 +15,7 @@ class Options extends React.Component {
           className='feature__option'
           name={slugify(this.props.feature)}
           checked={this.props.item.name === this.props.state}
-          onChange={(e) => doTheUpdate(feature, item)}
+          onClick={(e) => doTheUpdate(feature, item)}
         />
         <label htmlFor={this.props.key} className='feature__label'>
           {this.props.item.name} (
